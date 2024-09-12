@@ -51,4 +51,9 @@ describe('Funcionalidade: Login', () => {
         })
     });
 
+    it('Deve fazer login com Comandos customizados ', () => {
+        cy.login(perfil.usuario , perfil.senha)
+        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain' , 'Olá, zhu.teste (não é zhu.teste? Sair)')
+    });
+
 });

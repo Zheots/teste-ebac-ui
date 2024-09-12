@@ -34,4 +34,9 @@ describe('Funcionalidade: Cadastro', () => {
         cy.get('.woocommerce-Button').click()
         cy.get('.woocommerce-message').should('exist')
     });
+
+    it('Deve completar cadastro com comando customizado', () => {
+        cy.cadastro(faker.internet.email() , 'teste123' ,  faker.person.firstName() , faker.person.lastName())
+        
+    });
 });
